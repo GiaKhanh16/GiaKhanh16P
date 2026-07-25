@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@import 'tailwindcss';
+
+
+@theme {
+  --color-bgdark: #000000;
+  --color-tabBarText: #cccccc;
+  --color-tabBGActive: #1348dc;
+  --color-tabBHInactive: #121317;
+  --color-bgZed: #131418;
+  --color-text: #b3bde8;
+  --color-border: #31343f;
+  --color-navBG: #38BDF8;
+  --color-sky-glow: rgb(56 189 248 / 0.14);
+  --color-grayBlue: rgb(185, 190, 197);
+
+}
+
+.root-bg {
+  background-image: linear-gradient(to right, #4f4f4f2e 1px, transparent 1px),
+                    linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px);
+  background-size: 14px 24px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 70%, transparent 100%);
+}
+
+/* globals.css */
+.bg-black-felt {
+  background-color:#080808;
+  background-image: url("./assets/bg/black-felt.png");
+}
+
+
+
+.bg-star-dust {
+   background-color: #080808;
+   background-image: url("./assets/bg/stardust.png");
+}
+
+.bg-line-cross {
+  background-image: repeating-linear-gradient(
+    315deg,
+    #1111141a 0,
+    #1111141a 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
+}
