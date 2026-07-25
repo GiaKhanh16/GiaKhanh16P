@@ -9,7 +9,6 @@ export default defineConfig({
     tailwindcss(),
     svelte()
   ],
-  base: '/plainSvelte',
   resolve: {
      alias: {
         $src: fileURLToPath(new URL('./src', import.meta.url)),
