@@ -1,14 +1,61 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/Portfolios/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>plainsvelte</title>
-    <script type="module" crossorigin src="/Portfolios/assets/index-DrECEMn8.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolios/assets/index-BLV4kJxs.css">
+    <script type="module" crossorigin src="/Portfolios/assets/index-BMZjGXgr.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolios/assets/index-A5jq44AL.css">
   </head>
-  <body class="bg-black">
+  <body class="bg-black root-bg relative min-h-screen">
+      <div
+        class="pointer-events-none absolute top-0 left-0 w-screen h-screen"
+        style="
+        background: radial-gradient(
+          circle at 0 0,
+          rgba(56, 189, 248, 0.18),
+          transparent 30%
+        );
+        "
+      ></div>
+      <div
+        class="hidden lg:block absolute right-0 bottom-0 w-screen h-screen"
+        style="
+          background: radial-gradient(
+            650px circle at 100% 100%,
+            rgba(56,189,248,.25),
+            transparent 80%
+          );
+        "
+      ></div>
+    <div id="glow" class="pointer-events-none absolute inset-0"></div>
+
     <div id="app"></div>
+
+    <script>
+      let targetX = 0;
+      let targetY = 0;
+      let currentX = 0;
+      let currentY = 0;
+
+      const glowEl = document.getElementById("glow");
+
+      window.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
+
+      function animate() {
+        currentX += (targetX - currentX) * 0.1;
+        currentY += (targetY - currentY) * 0.1;
+
+        glowEl.style.background = `radial-gradient(650px circle at ${currentX}px ${currentY}px, rgba(56,189,248,0.14), transparent 40%)`;
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    </script>
   </body>
 </html>
